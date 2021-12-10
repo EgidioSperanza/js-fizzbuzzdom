@@ -1,19 +1,34 @@
 // [X] STAMPIAMO IN CONSOLE I NUMERI DA 1 A 100
-// [X] MILESTONE 1 
+// [X] MILESTONE 1
 //      Per i multipli di 3 stampi “Fizz” al posto del numero e per i multipli di 5 stampi Buzz.
 //      Per i numeri che sono sia multipli di 3 che di 5 stampi FizzBuzz.
-// [ ] MILESTONE 2
+// [X] MILESTONE 2
 //      Dato un container nel DOM, appendi un elemento html con il numero o la stringa corretta.
 // [ ] MILESTONE 3
-//      Applica uno stile differente a seconda del valore dell’indice per i multipli di 3, 
+//      Applica uno stile differente a seconda del valore dell’indice per i multipli di 3,
 //      per i multipli di 5 e per i valori che sono sia multipli di 3 che di 5.
 
-for(let i=1; i<=100;i++){
-    if(i%3===0 && i%5 ===0){
-        console.log('FizzBuzz');
-    }else if(i%3===0){
-        console.log('Fizz');
-    }else if(i%5===0){
-        console.log('Buzz');
-    }else {console.log(i);}
+const container = document.querySelector('body > div');
+const genericClass = 'number_box';
+const fizzClass = 'fizz';
+const buzzClass = 'buzz';
+const fizzBuzzClass = 'fizz_buzz';
+const fizz = `<div class="${genericClass} ${fizzClass}"><span>Fizz</span></div>`;
+const buzz = `<div class="${genericClass} ${buzzClass}"><span>Buzz</span></div>`;
+const fizzBuzz = `<div class="${genericClass} ${fizzBuzzClass}"><span>FizzBuzz</span></div>`;
+for (let i = 1; i <= 100; i++) {
+  if (i % 3 === 0 && i % 5 === 0) {
+    container.innerHTML+= fizzBuzz;
+    console.log("FizzBuzz");
+    } else if (i % 3 === 0) {
+    container.innerHTML+= fizz;
+    console.log("Fizz");
+  } else if (i % 5 === 0) {
+    container.innerHTML+= buzz;
+    console.log("Buzz");
+  } else {
+    container.innerHTML+=`<div class="${genericClass}><span>${i}</span></div>`;
+    console.log(i);
+  }
 }
+
