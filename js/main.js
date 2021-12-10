@@ -8,48 +8,45 @@
 //      Applica uno stile differente a seconda del valore dell’indice per i multipli di 3,
 //      per i multipli di 5 e per i valori che sono sia multipli di 3 che di 5.
 
-const container = document.querySelector('body > div');
-const genericClass = 'number_box';
-const fizzClass = 'fizz';
-const buzzClass = 'buzz';
-const fizzBuzzClass = 'fizz_buzz';
+const container = document.querySelector("body > div");
+const genericClass = "number_box";
+const fizzClass = "fizz";
+const buzzClass = "buzz";
+const fizzBuzzClass = "fizz_buzz";
 const fizz = `<div class="${genericClass} ${fizzClass}"><span>Fizz</span></div>`;
 const buzz = `<div class="${genericClass} ${buzzClass}"><span>Buzz</span></div>`;
 const fizzBuzz = `<div class="${genericClass} ${fizzBuzzClass}"><span>FizzBuzz</span></div>`;
-const bonus = document.querySelector('h1 > .bonus');
-const primeClass = 'prime';
+const bonus = document.querySelector("h1 > .bonus");
+const primeClass = "prime";
 
 for (let i = 1; i <= 100; i++) {
   if (i % 3 === 0 && i % 5 === 0) {
-    container.innerHTML+= fizzBuzz;
-    console.log("FizzBuzz");//DEBUG
-    } else if (i % 3 === 0) {
-    container.innerHTML+= fizz;
-    console.log("Fizz");//DEBUG
+    container.innerHTML += fizzBuzz;
+    console.log("FizzBuzz"); //DEBUG
+  } else if (i % 3 === 0) {
+    container.innerHTML += fizz;
+    console.log("Fizz"); //DEBUG
   } else if (i % 5 === 0) {
-    container.innerHTML+= buzz;
-    console.log("Buzz");//DEBUG
-  } else if (isPrime(i)){
-    container.innerHTML+= `<div class="${genericClass} ${primeClass}"><span>${i} Is a Prime Number</span></div>`;
-  }else{
-    container.innerHTML+= `<div class="${genericClass}"><span>${i}</span></div>`;
-    console.log(i);//DEBUG
+    container.innerHTML += buzz;
+    console.log("Buzz"); //DEBUG
+  } else if (isPrime(i)) {
+    container.innerHTML += `<div class="${genericClass} ${primeClass}"><span>${i} Is a Prime Number</span></div>`;
+  } else {
+    container.innerHTML += `<div class="${genericClass}"><span>${i}</span></div>`;
+    console.log(i); //DEBUG
   }
-  };
+}
 
-function isPrime (n)
-{
-    if (n < 2) return false;
+function isPrime(n) {
+  if (n < 2) return false;
 
-    let q = Math.floor(Math.sqrt(n));
+  let q = Math.floor(Math.sqrt(n));
 
-    for (let i = 2; i <= q; i++)
-    {
-        if (n % i == 0)
-        {
-            return false;
-        }
+  for (let i = 2; i <= q; i++) {
+    if (n % i == 0) {
+      return false;
     }
+  }
 
-    return true;
+  return true;
 }

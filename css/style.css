@@ -15,8 +15,8 @@ h1 {
   text-align: center;
 }
 
-span{
-    padding:0 10px;
+span {
+  padding: 0 10px;
 }
 
 .container {
@@ -37,29 +37,29 @@ span{
   text-align: center;
 }
 
-.fizz{
-    background-color:darkseagreen;
+.fizz {
+  background-color: darkseagreen;
 }
 
-.buzz{
-    background-color: goldenrod;
+.buzz {
+  background-color: goldenrod;
 }
 
-.fizz_buzz{
-    background-color: palevioletred;
+.fizz_buzz {
+  background-color: palevioletred;
 }
 
-.bonus{
-    font-size: 15px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: orangered;
+.bonus {
+  font-size: 15px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: orangered;
 }
 
-.prime{
-    background-color: #333;
-    color: white;
-    text-decoration: underline;
+.prime {
+  background-color: #333;
+  color: white;
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1000px) {
