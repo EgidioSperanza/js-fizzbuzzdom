@@ -16,7 +16,6 @@ const fizzBuzzClass = "fizz_buzz";
 const fizz = `<div class="${genericClass} ${fizzClass}"><span>Fizz</span></div>`;
 const buzz = `<div class="${genericClass} ${buzzClass}"><span>Buzz</span></div>`;
 const fizzBuzz = `<div class="${genericClass} ${fizzBuzzClass}"><span>FizzBuzz</span></div>`;
-const bonus = document.querySelector("h1 > .bonus");
 const primeClass = "prime";
 
 for (let i = 1; i <= 100; i++) {
