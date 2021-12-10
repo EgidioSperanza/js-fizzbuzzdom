@@ -15,6 +15,10 @@ h1 {
   text-align: center;
 }
 
+span{
+    padding:0 10px;
+}
+
 .container {
   width: 80vw;
   margin: 0 auto;
@@ -30,6 +34,7 @@ h1 {
   justify-content: center;
   align-items: center;
   background-color: cornflowerblue;
+  text-align: center;
 }
 
 .fizz{
@@ -42,6 +47,19 @@ h1 {
 
 .fizz_buzz{
     background-color: palevioletred;
+}
+
+.bonus{
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: orangered;
+}
+
+.prime{
+    background-color: #333;
+    color: white;
+    text-decoration: underline;
 }
 
 @media screen and (max-width: 1000px) {
