@@ -62,7 +62,7 @@ span {
   text-decoration: underline;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
   h1 {
     font-size: 40px;
     margin: 20px 0;
@@ -74,5 +74,20 @@ span {
   .number_box {
     width: calc(90vw / 5 - 20px);
     height: calc(90vw / 5 - 20px);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+    margin: 20px 0;
+  }
+
+  .container {
+    width: 90vw;
+  }
+  .number_box {
+    width: calc(90vw / 3 - 20px);
+    height: calc(90vw / 3 - 20px);
   }
 }
