@@ -73,7 +73,7 @@ for (let i = 1; i <= 100; i++) {
     }
   }
   const myDiv = document.createElement("div");
-  container.appendChild(myDiv);
+  container.append(myDiv);
   if (myClass !== "" || multy3) {
     (multy3_5)
       ? myDiv.classList.add(defaultClass, myClass, myOtherClass)
