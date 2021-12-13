@@ -8,32 +8,80 @@
 //      Applica uno stile differente a seconda del valore dell’indice per i multipli di 3,
 //      per i multipli di 5 e per i valori che sono sia multipli di 3 che di 5.
 
-const container = document.querySelector("body > div");
-const genericClass = "number_box";
-const fizzClass = "fizz";
-const buzzClass = "buzz";
-const fizzBuzzClass = "fizz_buzz";
-const fizz = `<div class="${genericClass} ${fizzClass}"><span>Fizz</span></div>`;
-const buzz = `<div class="${genericClass} ${buzzClass}"><span>Buzz</span></div>`;
-const fizzBuzz = `<div class="${genericClass} ${fizzBuzzClass}"><span>FizzBuzz</span></div>`;
-const primeClass = "prime";
+// const container = document.querySelector("body > div");
+// const genericClass = "number_box";
+// const fizzClass = "fizz";
+// const buzzClass = "buzz";
+// const fizzBuzzClass = "fizz_buzz";
+// const fizz = `<div class="${genericClass} ${fizzClass}"><span>Fizz</span></div>`;
+// const buzz = `<div class="${genericClass} ${buzzClass}"><span>Buzz</span></div>`;
+// const fizzBuzz = `<div class="${genericClass} ${fizzBuzzClass}"><span>FizzBuzz</span></div>`;
+// const primeClass = "prime";
+
+// for (let i = 1; i <= 100; i++) {
+//   if (i % 3 === 0 && i % 5 === 0) {
+//     container.innerHTML += fizzBuzz;
+//     console.log("FizzBuzz"); //DEBUG
+//   } else if (i % 3 === 0) {
+//     container.innerHTML += fizz;
+//     console.log("Fizz"); //DEBUG
+//   } else if (i % 5 === 0) {
+//     container.innerHTML += buzz;
+//     console.log("Buzz"); //DEBUG
+//   } else if (isPrime(i)) {
+//     container.innerHTML += `<div class="${genericClass} ${primeClass}"><span>${i} Is a Prime Number</span></div>`;
+//   } else {
+//     container.innerHTML += `<div class="${genericClass}"><span>${i}</span></div>`;
+//     console.log(i); //DEBUG
+//   }
+// }
+
+//MIGLIORIAMO IL TUTTO
+const container = document.querySelector(".container");
 
 for (let i = 1; i <= 100; i++) {
-  if (i % 3 === 0 && i % 5 === 0) {
-    container.innerHTML += fizzBuzz;
-    console.log("FizzBuzz"); //DEBUG
-  } else if (i % 3 === 0) {
-    container.innerHTML += fizz;
-    console.log("Fizz"); //DEBUG
-  } else if (i % 5 === 0) {
-    container.innerHTML += buzz;
-    console.log("Buzz"); //DEBUG
-  } else if (isPrime(i)) {
-    container.innerHTML += `<div class="${genericClass} ${primeClass}"><span>${i} Is a Prime Number</span></div>`;
+  let myText = "";
+  let defaultClass = "number_box";
+  let myClass = "";
+  let multy3 = false;
+  let multy3_5 = false;
+
+  if (i % 3 === 0 || i % 5 === 0) {
+    if (i % 3 === 0) {
+      myClass = "fizz";
+      myText = "Fizz";
+      multy3 = true;
+    }
+
+    if (i % 5 === 0) {
+      if (multy3) {
+        myClass = "fizz";
+        myOtherClass = "buzz";
+        myText += "Buzz";
+        multy3_5=true;
+      } else {
+        myClass = "buzz";
+        myText = "Buzz";
+      }
+    }
   } else {
-    container.innerHTML += `<div class="${genericClass}"><span>${i}</span></div>`;
-    console.log(i); //DEBUG
+    if (isPrime(i)) {
+      myText = `${i} è un numero primo`;
+      myClass = "prime";
+    } else {
+      myText = i;
+    }
   }
+  const myDiv = document.createElement("div");
+  container.appendChild(myDiv);
+  if (myClass !== "" || multy3) {
+    (multy3_5)
+      ? myDiv.classList.add(defaultClass, myClass, myOtherClass)
+      : myDiv.classList.add(defaultClass, myClass);
+  } else {
+    myDiv.classList.add(defaultClass);
+  }
+  myDiv.append(myText);
 }
 
 function isPrime(n) {
