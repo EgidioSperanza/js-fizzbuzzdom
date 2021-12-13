@@ -39,32 +39,24 @@
 //MIGLIORIAMO IL TUTTO
 const container = document.querySelector(".container");
 
-for (let i = 1; i <= 100; i++) {
+for (let i = 1; i < 101; i++) {
   let myText = "";
   let defaultClass = "number_box";
   let myClass = "";
-  let multy3 = false;
-  let multy3_5 = false;
 
-  if (i % 3 === 0 || i % 5 === 0) {
-    if (i % 3 === 0) {
-      myClass = "fizz";
-      myText = "Fizz";
-      multy3 = true;
+  if (i % 3 === 0 || i % 5 === 0){
+    if (i % 15 === 0) {
+      myClass="fizz_buzz";
+      myText="FizzBuzz";
+    }else if (i % 3 === 0) {
+      myClass="fizz";
+      myText="Fizz";
     }
-
-    if (i % 5 === 0) {
-      if (multy3) {
-        myClass = "fizz";
-        myOtherClass = "buzz";
-        myText += "Buzz";
-        multy3_5=true;
-      } else {
-        myClass = "buzz";
-        myText = "Buzz";
-      }
-    }
-  } else {
+    else {
+      myClass="buzz";
+      myText="Buzz";
+    } 
+  }else {
     if (isPrime(i)) {
       myText = `${i} è un numero primo`;
       myClass = "prime";
@@ -74,13 +66,9 @@ for (let i = 1; i <= 100; i++) {
   }
   const myDiv = document.createElement("div");
   container.append(myDiv);
-  if (myClass !== "" || multy3) {
-    (multy3_5)
-      ? myDiv.classList.add(defaultClass, myClass, myOtherClass)
-      : myDiv.classList.add(defaultClass, myClass);
-  } else {
-    myDiv.classList.add(defaultClass);
-  }
+  (myClass !== "")
+      ? myDiv.classList.add(defaultClass, myClass)
+      : myDiv.classList.add(defaultClass);
   myDiv.append(myText);
 }
 
@@ -97,3 +85,4 @@ function isPrime(n) {
 
   return true;
 }
+
